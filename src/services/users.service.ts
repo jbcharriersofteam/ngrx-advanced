@@ -19,6 +19,12 @@ export class UsersService {
       name: 'tata',
       username: 'toto1',
       email: 'email'
+    },
+    {
+      id: 2,
+      name: 'titi',
+      username: 'toto2',
+      email: 'email'
     }]
   }
 }

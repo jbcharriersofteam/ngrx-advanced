@@ -14,7 +14,7 @@ export class UsersEffects {
     return this.actions$.pipe(
       ofType(usersActions.getAll),
       switchMap(() => this.usersService.getAll()),
-      map((users: any) => usersActions.getAllSuccess({ users })),
+      map((user: any) => usersActions.getAllSuccess({ user: user })),
       catchError((error) => of(usersActions.getAllFailure({ error })))
     );
   });

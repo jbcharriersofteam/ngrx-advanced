@@ -1,5 +1,9 @@
+@if(loading){
+<p>...chargement en cours</p>
+} @else {
 <ul>
   <li *ngFor="let user of usersList$ | async">{{ user.name }}</li>
 </ul>
+}
 
-{{title}}
+{{ title }}

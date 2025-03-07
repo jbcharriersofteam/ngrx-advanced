@@ -17,9 +17,14 @@ export class AppComponent implements OnInit {
   private store = inject(Store);
   loading$: Observable<boolean> = this.store.select(selectUsersLoading);
   usersList$: Observable<User[]> = this.store.select(selectUsersList);
+  loading: boolean = false;
+
   title = 'ngrxAdvanced';
 
   ngOnInit() {
     this.store.dispatch(usersActions.getAll());
+    this.loading$.subscribe(val => {
+      this.loading = val;
+    })
   }
 }

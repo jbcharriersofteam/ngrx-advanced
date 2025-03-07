@@ -13,13 +13,14 @@ export const usersReducer = createReducer(
     ...state,
     loading: true,
   })),
-  on(usersActions.getAllSuccess, (state, { users }) => ({
+  on(usersActions.getAllSuccess, (state, { user }) => ({
     ...state,
-    usersList: users,
+    usersList: [...state.usersList, user],
     loading: false,
   })),
-  on(usersActions.getAllFailure, (state) => ({
+  on(usersActions.getAllFailure, (state, { error }) => ({
     ...state,
     loading: false,
+    error,
   }))
 );

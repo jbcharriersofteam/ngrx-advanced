@@ -2,7 +2,7 @@ import { createFeatureSelector, createSelector } from '@ngrx/store';
 import { UsersState } from './model';
 
 // Sélecteur de fonctionnalités
-export const selectUsersState = createFeatureSelector<UsersState>('users');
+export const selectUsersState = createFeatureSelector<UsersState>('myUsers');
 
 // Sélecteurs spécifiques
 export const selectUsersList = createSelector(
